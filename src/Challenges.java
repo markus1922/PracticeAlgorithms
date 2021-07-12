@@ -74,6 +74,9 @@ public class Challenges {
         if ( num % 3 == 0)
             return "fizz";
         // multiply 5 then return buzz
+        if  (num % 5 == 0)
+            return "Buzz";
+        return Integer.toString(num);
     }
 
     /**
@@ -90,8 +93,10 @@ public class Challenges {
     /** The "Reverser"
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
     public static String reverser(String reverseMe){
-        // write your code here
-        // you will need to change the return statement
+        StringBuilder reverse = new StringBuilder();
+        for(char ch:reverseMe.toCharArray()) {
+            if(character.isUppercase)
+        }
         return "";
     }
 
@@ -100,9 +105,13 @@ public class Challenges {
      * Write a function that reverses the order of an array
      */
     public static int[] reverseArray(int[] arr){
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+        int arrlength = arr.length;
+        int[] newarr = new int[arr.length];
+        for (int x = 0; x < arrlength; x++) {
+            int pos = arrlength - x- 1;
+            newarr[x] = arr[pos];
+        }
+        return newarr;
     }
 
     /**
@@ -126,7 +135,8 @@ public class Challenges {
     public static int[] sortNumsAscending(int[] nums){
         // write your code here
         // you will need to change the return statement
-        return new int[0];
+        Arrays.sort(nums);
+        return nums;
     }
 
     /**
