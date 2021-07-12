@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class secondLargest_Test {
     @Test
     public void secondLargestNumber_test01() {
-        assertEquals(40, Challenges.secondLargestNumber(new int[] {10,40,30,20,50}));
+        assertEquals(40, Challenges.secondLargestNumber(new int[] {10,40,30,20, 24, 25, 26,50}));
     }
 
     @Test

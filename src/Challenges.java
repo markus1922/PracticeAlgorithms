@@ -1,16 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
     public static int countTrueFalse(boolean[] arr) {
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        //look at each piece of the array
+        int count = 0;
+        // Is each element true or false
+        for(boolean each: arr) {
+         //count how many are true
+            if (each) count ++;
+        }
+        // then return that count
+        return count;
     }
 
     /** Create a function that takes an array and returns the absolute difference between the biggest and smallest numbers.*/
     public static int differenceMinMax(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        // find the largest and hold it
+        Arrays.sort(nums);
+        // finding smallest and hold it
+        int small=nums[0];
+        int big=nums[nums.length-1];
+        //return absolute value
+
+        return Math.abs(big - small);
     }
 
     /**
@@ -22,14 +38,23 @@ public class Challenges {
     public static String stutter(String str){
         // write your code here
         // you will need to change the return statement
-        return "";
+        char[] ch = new char[str.length()];
+        for (int i = 0; i < 2; i++ ) {
+            ch[i] = str.charAt(i);
+        }
+        return ch.toString() + "... " + ch.toString() + "... " + str + "?";
     }
 
     /** Write a function that takes an array of numbers and returns the second largest number.*/
     public static int secondLargestNumber(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        //sort from lowest to highest
+        Integer[] descend = new Integer[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+        descend[i] = nums[i];
+        }
+        Arrays.sort(descend,Collections.reverseOrder() );
+        //find next to largest an return
+        return descend[1]  ;
     }
 
     /**
@@ -42,9 +67,13 @@ public class Challenges {
      The output should always be a string even if it is not a multiple of 3 or 5.
      **/
     public static String fizzBuzz(int num){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        // both return as fizzB
+        if (num % 5 == 0 && num % 3 == 0)
+        return "fizzBuzz";
+        // multiply 3 then return fizz
+        if ( num % 3 == 0)
+            return "fizz";
+        // multiply 5 then return buzz
     }
 
     /**
@@ -52,10 +81,10 @@ public class Challenges {
      * Write a program that gets three integers from the user.
      * Count from the first number to the second number in increments of the third number.
      */
-    public static int[] skipCount(int countFrom, int countTo, int countBy){
+    public static String skipCount(int countFrom, int countTo, int countBy){
         // write your code here
         // you will need to change the return statement
-        return new int[0];
+        return "";
     }
 
     /** The "Reverser"
@@ -81,9 +110,13 @@ public class Challenges {
      * Return "DUCK!" if found, otherwise,"Relax, there's no bomb.".
      */
     public static String duckTheBomb(String checkMe){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        // find the word bomb
+        // if bomb is found return "DUCK
+        String strOrig = checkMe;
+        int intIndex = strOrig.indexOf("bomb");
+        if (intIndex == -1)
+            return "Relax, there's no bomb.";
+        return "DUCK!";
     }
 
     /** Sort in Ascending Order
