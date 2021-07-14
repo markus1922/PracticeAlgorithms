@@ -86,8 +86,15 @@ public class Challenges {
      */
     public static String skipCount(int countFrom, int countTo, int countBy){
         // write your code here
-        // you will need to change the return statement
-        return "";
+        if(countTo < countFrom) {
+            return "Try again with better numbers!";
+        }
+        StringBuilder answer = new StringBuilder();
+        for (int currentInt = countFrom; currentInt <= countTo; currentInt += countBy) {
+            answer.append(currentInt).append("...");
+        }
+        answer.setLength(answer.length() - 3);
+        return answer.toString();
     }
 
     /** The "Reverser"
@@ -95,9 +102,11 @@ public class Challenges {
     public static String reverser(String reverseMe){
         StringBuilder reverse = new StringBuilder();
         for(char ch:reverseMe.toCharArray()) {
-            if(character.isUppercase)
+            if(Character.isUpperCase(ch)){
+                reverse.append(Character.toLowerCase(ch));
+            }
         }
-        return "";
+        return reverse.reverse().toString();
     }
 
     /**
